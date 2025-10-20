@@ -2,8 +2,17 @@
 let wholeNum
 let topFracNum
 let bottomFracNum
+let calculate = (wholeNum) => {
+  let fullCut
+  let halfCut
+  let finalHalf
+  fullCut = 97 - wholeNum
+  halfCut = fullCut / 2
+  finalHalf = 97 - halfCut
+  return finalHalf
+}
+let calculatedResult
 </script>
-
 <template>
   <h1>Measurement</h1>
   <div class="container">
@@ -12,7 +21,8 @@ let bottomFracNum
     <input type="number" name="Bottom Fraction Number" id="btm-frac-num" v-model="bottomFracNum">
     <div id="fraction-line">______________________________</div>
   </div>
-  <input type="button" value="Calculate" id="calc-btn">
+  <input type="button" value="Calculate" id="calc-btn" v-on:click="calculate">
+  <h1 v-bind=""></h1>
 </template>
 
 <style scoped>
